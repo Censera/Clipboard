@@ -8,20 +8,32 @@ The utility requires `libclipboard` installed on your system.
 - Ubuntu/Debian: `sudo apt install libclipboard-dev`
 - Arch Linux: `sudo pacman -S libclipboard`
 
+- NixOs:
+
+```bash
+nix develop
+```
+
+Once inside the development shell, run:
+
+```bash
+gcc main.c -lclipboard -o bin/clipboard
+```
+
 ## Usage
 
 1. Copying via arguments
 
 ```bash
-./clipboard "Copy me."
+./bin/clipboard "Copy me."
 ```
 
 2. Copying via piping
 
 ```bash
-echo "Hello, me!" | ./clipboard
+echo "Hello, me!" | ./bin/clipboard
 ```
 
 ```bash
-cat file.txt | ./clipboard
+cat file.txt | ./bin/clipboard
 ```
