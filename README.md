@@ -19,7 +19,7 @@ The utility requires `libclipboard` installed on your system.
 	Once inside the development shell, run:
 
 	```bash
-	gcc main.c -lclipboard -o bin/clipboard
+	gcc src/main.c -lclipboard -o bin/clipboard
 	```
 
 ## Usage
