@@ -52,16 +52,16 @@ int	main(int argc, char** argv)
 
 		while (1)
 		{
-			size_t	ret = fread(buf, 1, sizeof buf - 1, stdin);
+			size_t	input = fread(buf, 1, sizeof buf - 1, stdin);
 
-			if (ret == 0)
+			if (input == 0)
 			{
 				if (ferror(stdin))
 					errx(1, "Couldn't read");
 				break;
 			}
 
-			read += r;
+			read += input;
 
 			if (read >= cap - 1)
 			{
