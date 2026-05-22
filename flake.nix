@@ -27,7 +27,7 @@
 				];
 
 				shellHook = ''
-					echo 'Run: gcc main.c -libclipboard -o bin/clipboard'
+					echo 'Run: gcc src/main.c -libclipboard -o bin/clipboard'
 				'';
 			};
 		});
