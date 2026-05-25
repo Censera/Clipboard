@@ -10,9 +10,9 @@ The utility requires `libclipboard` installed on your system.
 
 - NixOS:
 
-	Enter an isolated developement environment: 
+	Enter an isolated development environment: 
 
-	```bash
+	```nix
 	nix develop
 	```
 
