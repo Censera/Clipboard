@@ -8,7 +8,7 @@ pkgs.stdenv.mkDerivation {
 
     nativeBuildInputs = with pkgs; [ 
         gcc
-        pkg-config 
+        pkg-config
     ];
 
     buildInputs = with pkgs; [

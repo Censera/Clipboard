@@ -37,12 +37,15 @@ int	main(int argc, char** argv)
 {
 	const char	*src;
 
-	if (1 < argc && argv[1] != NULL)
+	if (argc >= 2 && argv[1] != NULL)
 	{
 		src = argv[1];
 	}
 	else
 	{
+		if (isatty(STDIN_FILENO))
+			errx(1, "No input");
+
 		size_t	cap = 4096;
 		size_t	read = 0;
 		char	*buf = malloc(cap);
