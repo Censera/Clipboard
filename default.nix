@@ -7,7 +7,7 @@ pkgs.stdenv.mkDerivation {
     src = ./.;
 
     nativeBuildInputs = with pkgs; [ 
-        gcc
+        clang
         pkg-config
     ];
 
@@ -16,7 +16,7 @@ pkgs.stdenv.mkDerivation {
     ];
 
     buildPhase = ''
-        gcc src/main.c inc/clipboard_x11.c $(pkg-config --cflags --libs xcb) -o bin/clipboard
+        clang src/main.c inc/clipboard_x11.c $(pkg-config --cflags --libs xcb) -o bin/clipboard
     '';
 
     installPhase = ''
