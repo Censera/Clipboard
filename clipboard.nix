@@ -1,26 +1,26 @@
 { pkgs }:
 
 pkgs.stdenv.mkDerivation {
-  pname = "clipboard";
-  version = "1.0";
+    pname = "clipboard";
+    version = "1.0.1";
 
-  src = ./.;
+    src = ./.;
 
-  nativeBuildInputs = [ 
-    pkgs.gcc 
-    pkgs.pkg-config 
-  ];
+    nativeBuildInputs = with pkgs; [ 
+        gcc
+        pkg-config 
+    ];
 
-  buildInputs = [
-    pkgs.xorg.libxcb
-  ];
+    buildInputs = with pkgs; [
+        xorg.libxcb
+    ];
 
-  buildPhase = ''
-    gcc main.c inc/clipboard_x11.c $(pkg-config --cflags --libs xcb) -o clipboard
-  '';
+    buildPhase = ''
+        gcc src/main.c inc/clipboard_x11.c $(pkg-config --cflags --libs xcb) -o bin/clipboard
+    '';
 
-  installPhase = ''
-    mkdir -p $out/bin
-    cp clipboard $out/bin/
-  '';
+    installPhase = ''
+        mkdir -p $out/bin
+        cp bin/clipboard $out/bin/
+    '';
 }

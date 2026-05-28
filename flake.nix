@@ -24,10 +24,11 @@
 				buildInputs = with pkgs; [
 					libclipboard
 					xorg.libX11
+                    libxcb
 				];
 
 				shellHook = ''
-					echo 'Run: gcc src/main.c -libclipboard -o bin/clipboard'
+					echo "Run: gcc src/main.c -libclipboard -o bin/clipboard"
 				'';
 			};
 		});
