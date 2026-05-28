@@ -16,15 +16,13 @@
 			default = pkgs.mkShell {
 
 				nativeBuildInputs = with pkgs; [
-					gcc
-					gnumake
+					clang
 					pkg-config
 				];
 
 				buildInputs = with pkgs; [
 					libclipboard
 					xorg.libX11
-                    libxcb
 				];
 
 				shellHook = ''
