@@ -24,7 +24,7 @@ int	available_to_copy(const char *src)
 
 		clipboard_set_text_ex(cb, src, -1, LCB_CLIPBOARD);
 
-		usleep(100000);
+		sleep(10);
 
 		clipboard_free(cb);
 		exit(0);
@@ -55,7 +55,8 @@ int	main(int argc, char** argv)
 
 		while (1)
 		{
-			size_t	input = fread(buf, 1, sizeof buf - 1, stdin);
+			size_t	space_left = cap - read -1;
+			size_t	input = fread(buf, 1, space_left, stdin);
 
 			if (input == 0)
 			{
